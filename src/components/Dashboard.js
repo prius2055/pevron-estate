@@ -1,14 +1,8 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 import Navigation from './Navigation';
-import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { getProperties } from '../redux/features/propertySlice';
-import { getCurrentUser } from '../redux/features/usersSlice';
-import DeImage from '../img/alexandra-courts/1.png';
 
 ////////////////
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
@@ -24,7 +18,6 @@ import AboutImage from '../img/about-us.png';
 import IconHome from '../img/icon/house.png';
 import IconBuy from '../img/icon/buy-home.png';
 import IconSale from '../img/icon/sale.png';
-import IconAgent from '../img/icon/agent.png';
 import Mortgage from '../img/mortgage.jpg';
 import Logo from '../img/logo.png';
 import './Dashboard.css';
@@ -56,10 +49,7 @@ const Dashboard = () => {
       });
   }, []);
 
-  console.log(currencyRates);
-
   const handleCurrencySymbolChange = (e, refKey) => {
-    // e.preventDefault();
     setCurrencySymbol(e.target.value);
 
     // Reset all button backgrounds
@@ -221,23 +211,6 @@ const Dashboard = () => {
                   </Link>
                 ))}
               </div>
-
-              {/* <div className="p-arrows">
-                <FontAwesomeIcon
-                  icon={faCircleChevronLeft}
-                  style={{ color: '#9ed714' }}
-                  size="2xl"
-                  className="cursor-pointer"
-                  onClick={prevHandler}
-                />
-                <FontAwesomeIcon
-                  icon={faCircleChevronRight}
-                  style={{ color: '#9ed714' }}
-                  size="2xl"
-                  className="cursor-pointer"
-                  onClick={nextHandler}
-                />
-              </div> */}
             </div>
           )}
           {properties.length === 0 && (
@@ -248,7 +221,7 @@ const Dashboard = () => {
 
       <div className="about-us">
         <div className="about-img">
-          <img src={AboutImage} alt="About image photo" />
+          <img src={AboutImage} alt="Hero for About section" />
         </div>
 
         <div className="about-notes">
