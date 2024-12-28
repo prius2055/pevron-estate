@@ -108,7 +108,7 @@ const Dashboard = () => {
           </div>
           <img
             src={HeroImage}
-            alt="Image of a building"
+            alt="A beautiful magnificient building"
             className="d-hero-image"
           />
         </div>
