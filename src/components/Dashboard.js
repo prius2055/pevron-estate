@@ -1,138 +1,445 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleChevronLeft } from '@fortawesome/free-solid-svg-icons';
-import { faCircleChevronRight } from '@fortawesome/free-solid-svg-icons';
+
 import Navigation from './Navigation';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProperties } from '../redux/features/propertySlice';
 import { getCurrentUser } from '../redux/features/usersSlice';
+import DeImage from '../img/alexandra-courts/1.png';
+
+////////////////
+import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faBed } from '@fortawesome/free-solid-svg-icons';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
+import { faAt } from '@fortawesome/free-solid-svg-icons';
+
+import properties from '../properties';
+import HeroImage from '../img/hero.png';
+import AboutImage from '../img/about-us.png';
+import IconHome from '../img/icon/house.png';
+import IconBuy from '../img/icon/buy-home.png';
+import IconSale from '../img/icon/sale.png';
+import IconAgent from '../img/icon/agent.png';
+import Mortgage from '../img/mortgage.jpg';
+import Logo from '../img/logo.png';
+import './Dashboard.css';
 
 const Dashboard = () => {
-  const { properties, users } = useSelector((store) => store);
+  const [currencySymbol, setCurrencySymbol] = useState('NGN');
+  const [currencyRates, setCurrencyRates] = useState({});
+  const [propertyData, setPropertyData] = useState(properties);
 
-  const { propertyData, isLoading, loadingError } = properties;
-
-  const [page, setPage] = useState(1);
-
-  const { currentUserData } = users;
-
-  const dispatch = useDispatch();
-
-  const navigate = useNavigate();
-
-  const itemsPerPage = 3;
-
-  const pages = propertyData?.length / itemsPerPage;
-
-  const skip = page * itemsPerPage - itemsPerPage;
-
-  const prevHandler = (e) => {
-    e.preventDefault();
-    if (page !== 1) {
-      setPage((prev) => prev - 1);
-    } else {
-      return;
-    }
-  };
-
-  const nextHandler = (e) => {
-    e.preventDefault();
-    if (page !== pages) {
-      setPage((prev) => prev + 1);
-    } else {
-      return;
-    }
+  const buttonRefs = {
+    naira: useRef(null),
+    dollar: useRef(null),
+    pound: useRef(null),
+    euro: useRef(null),
   };
 
   useEffect(() => {
-    dispatch(getProperties());
-    dispatch(getCurrentUser());
-  }, [dispatch]);
+    fetch(
+      `https://cdn.jsdelivr.net/gh/ismartcoding/currency-api/2024-12-28/01.json`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        setCurrencyRates({
+          EUR: data.quotes.EUR,
+          GBP: data.quotes.GBP,
+          NGN: data.quotes.NGN,
+          USD: data.quotes.USD,
+        });
+      });
+  }, []);
 
-  // if (currentUserData.email === '') {
-  //   navigate('/login');
-  // }
+  console.log(currencyRates);
 
-  if (isLoading) {
-    return (
-      <div className="m-6">
-        <h3>
-          <em>loading...</em>
-        </h3>
-      </div>
+  const handleCurrencySymbolChange = (e, refKey) => {
+    // e.preventDefault();
+    setCurrencySymbol(e.target.value);
+
+    // Reset all button backgrounds
+    Object.values(buttonRefs).forEach((ref) => {
+      if (ref.current) {
+        ref.current.style.backgroundColor = '#fff';
+        ref.current.style.color = '#333';
+      }
+    });
+
+    // Change the background of the clicked button
+    if (buttonRefs[refKey]?.current) {
+      buttonRefs[refKey].current.style.backgroundColor = '#c13236';
+      buttonRefs[refKey].current.style.color = '#fff';
+    }
+
+    const conversionRates = {
+      naira: 1, // Assume NGN is the base currency
+      dollar: 1 / currencyRates.NGN,
+      pound: (1 / currencyRates.NGN) * currencyRates.GBP,
+      euro: (1 / currencyRates.NGN) * currencyRates.EUR,
+    };
+
+    const selectedRate = conversionRates[refKey] || 1;
+
+    const updatedPropertyData = properties.map((property) => ({
+      ...property,
+      price: parseFloat(property.price * selectedRate).toFixed(2),
+    }));
+
+    setPropertyData(updatedPropertyData);
+  };
+
+  const formatPrice = (value, currency) =>
+    new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(
+      value
     );
-  }
-
-  if (loadingError) {
-    return (
-      <div className="m-6">
-        <h3>
-          <em>Error loading properties</em>
-        </h3>
-      </div>
-    );
-  }
 
   return (
-    <div className="flex">
+    <div className="dashboard-container">
       <Navigation />
 
-      <div className="flex flex-col items-center py-8 w-5/6">
-        <p className="my-2 font-bold">
-          Welcome, {currentUserData ? currentUserData.username : ''}!
-        </p>
-        <header className="my-4 font-bold">LATEST PROPERTIES</header>
+      <div className="dashboard">
+        <div className="dashboard-hero">
+          <div className="d-hero-text">
+            <h1>Discover A Place You'll Love To Live</h1>
+            <p>
+              Find your perfect home with ease and confidence. Whether you're
+              buying or renting, we combine vast expertise in real estate and
+              mortgages with a commitment to trust and reliability. Let us guide
+              you to the right choice, where trust meets your dream home.
+            </p>
 
-        {propertyData.length !== 0 && (
-          <div className="flex flex-col items-center">
-            <p>Please select a property to book for an inspection</p>
-            <div className="flex items-center w-full px-12">
-              <FontAwesomeIcon
-                icon={faCircleChevronLeft}
-                style={{ color: '#9ed714' }}
-                size="2xl"
-                className="cursor-pointer"
-                onClick={prevHandler}
-              />
-              <div className="flex mt-12 items-start px-2">
-                {propertyData
-                  ?.slice(skip, skip + itemsPerPage)
-                  .map((property) => (
-                    <Link
-                      to={`/property-detail/${property.id}`}
-                      className="flex flex-col items-center text-center w-1/3"
-                      key={property.id}
-                    >
-                      <img
-                        src={property.image}
-                        alt={property.name}
-                        className="w-96 h-96 rounded-full"
-                      />
-                      <div className="flex justify-center my-6 text-center font-bold border-b-2 border-dotted pb-4 mx-8">
-                        <span className="mr-4 ">{property.name}</span>
-                        <span>PTY00{property.id}</span>
-                      </div>
-                      <p className="w-3/4 m-auto">{property.description}</p>
-                    </Link>
-                  ))}
+            <p className="d-hero-text-last">Discover homes, discover trust.</p>
+            <button className="cta">Make An Enquiry</button>
+          </div>
+          <img
+            src={HeroImage}
+            alt="Image of a building"
+            className="d-hero-image"
+          />
+        </div>
+
+        <div className="property-container">
+          <h2>Latest Properties</h2>
+
+          {propertyData.length !== 0 && (
+            <div className="properties">
+              <div className="p-currencies">
+                <p>Show pricing in:</p>
+                <div className="p-currency-grp">
+                  <button
+                    className="btn-naira"
+                    value="NGN"
+                    ref={buttonRefs.naira}
+                    onClick={(e) => handleCurrencySymbolChange(e, 'naira')}
+                  >
+                    NGN
+                  </button>
+                  <button
+                    className="btn-dollar"
+                    value="USD"
+                    ref={buttonRefs.dollar}
+                    onClick={(e) => handleCurrencySymbolChange(e, 'dollar')}
+                  >
+                    USD
+                  </button>
+                  <button
+                    className="btn-pound"
+                    value="GBP"
+                    ref={buttonRefs.pound}
+                    onClick={(e) => handleCurrencySymbolChange(e, 'pound')}
+                  >
+                    GBP
+                  </button>
+                  <button
+                    className="btn-euro"
+                    value="EUR"
+                    ref={buttonRefs.euro}
+                    onClick={(e) => handleCurrencySymbolChange(e, 'euro')}
+                  >
+                    EUR
+                  </button>
+                </div>
               </div>
-              <FontAwesomeIcon
-                icon={faCircleChevronRight}
-                style={{ color: '#9ed714' }}
-                size="2xl"
-                className="cursor-pointer"
-                onClick={nextHandler}
-              />
+
+              <div className="properties-grid">
+                {propertyData?.map((property) => (
+                  <Link
+                    // to={`/property-detail/${property.id}`}
+                    className="property-card"
+                    key={property.id}
+                  >
+                    <img
+                      src={property.mainImage}
+                      alt={property.name}
+                      className="property-image"
+                    />
+                    <div className="p-card-notes">
+                      <div className="p-name">
+                        <FontAwesomeIcon
+                          icon={faHouse}
+                          className="p-card-icon"
+                        />
+                        <h3>{property.name}</h3>
+                      </div>
+
+                      <div className="p-details">
+                        <div>
+                          <div className="p-type">
+                            <FontAwesomeIcon
+                              icon={faBed}
+                              className="p-card-icon"
+                            />
+                            <p>{property.type}</p>
+                          </div>
+                          <div className="p-location">
+                            <FontAwesomeIcon
+                              icon={faLocationDot}
+                              className="p-card-icon"
+                            />
+                            <p>{property.location}</p>
+                          </div>
+                        </div>
+
+                        {property.mortgageAvailable === 'True' ? (
+                          <div className="p-mortgage">
+                            <p>Mortgage</p>
+                            <p>Available</p>
+                          </div>
+                        ) : (
+                          ''
+                        )}
+                      </div>
+                    </div>
+                    <button className="p-price">
+                      <span>{formatPrice(property.price, currencySymbol)}</span>
+                    </button>
+                  </Link>
+                ))}
+              </div>
+
+              {/* <div className="p-arrows">
+                <FontAwesomeIcon
+                  icon={faCircleChevronLeft}
+                  style={{ color: '#9ed714' }}
+                  size="2xl"
+                  className="cursor-pointer"
+                  onClick={prevHandler}
+                />
+                <FontAwesomeIcon
+                  icon={faCircleChevronRight}
+                  style={{ color: '#9ed714' }}
+                  size="2xl"
+                  className="cursor-pointer"
+                  onClick={nextHandler}
+                />
+              </div> */}
+            </div>
+          )}
+          {properties.length === 0 && (
+            <p>No properties at the moment, please check back later</p>
+          )}
+        </div>
+      </div>
+
+      <div className="about-us">
+        <div className="about-img">
+          <img src={AboutImage} alt="About image photo" />
+        </div>
+
+        <div className="about-notes">
+          <h2>About Us</h2>
+          <h3>
+            Pevron Estate: Bridging Real Estate and Finance with Expertise and
+            Trust
+          </h3>
+          <p>
+            At Pevron Estate, we specialize in connecting the worlds of real
+            estate and finance, delivering comprehensive solutions for the sale,
+            purchase, and rental of properties. With years of proven experience,
+            we are proud to be a trusted partner for individuals and businesses
+            navigating the complexities of the real estate market.
+          </p>
+          <p>
+            Our strength lies in our well-established relationships with leading
+            banks and financial institutions. This allows us to provide an
+            all-inclusive service, ensuring seamless transactions and tailored
+            financial solutions all under one roof.
+          </p>
+          <p>
+            Above all, trust is the cornerstone of our success. We are committed
+            to building lasting relationships with our clients, providing
+            reliable guidance, and fostering confidence at every step of the
+            real estate journey. At Pevron Estate, expertise, innovation, and
+            trust come together to turn your property aspirations into reality.
+          </p>
+        </div>
+      </div>
+
+      <div className="services">
+        <div className="service-card">
+          <img src={IconBuy} alt="Buy a home icon" />
+          <h4>Buy a Home</h4>
+          <p>
+            Affordable homes for sale available on the website, we can match you
+            with a house you will want to call home.
+          </p>
+        </div>
+        <div className="service-card">
+          <img src={IconHome} alt="Rent a home icon" />
+          <h4>Rent a Home</h4>
+          <p>
+            Luxury Apartments for rent, we can match you with a house you will
+            want to call home.
+          </p>
+        </div>
+        <div className="service-card">
+          <img src={IconSale} alt="Sell a home icon" />
+          <h4>Sell a Home</h4>
+          <p>
+            Have a home, you wish to put up for sale? we can match you with
+            clients.
+          </p>
+        </div>
+      </div>
+
+      <button className="about-cta-btn">Speak to an Agent</button>
+      <div className="agent">
+        <FontAwesomeIcon icon={faUsers} className="icon-users" />
+        <div className="agent-notes">
+          <h2>Join Our Team of Dynamic and Ambitious Agents </h2>
+          <p>
+            Are you ready to take your career to the next level? <br />
+            Become part of a fast-growing team of professionals committed to
+            excellence, innovation, and success.
+          </p>
+        </div>
+
+        <button className="btn-agent">Join Now</button>
+      </div>
+
+      <div className="mortgage">
+        <div className="m-text">
+          <h2>Mortage In Nigeria</h2>
+          <p>
+            At Pevron Estate we have close relationships with several reputable
+            mortgage brokers and financial institutions. These include
+            independent mortgage brokers in the UK as well partnerships with
+            various mortgage banks in Nigeria. If you do not have a mortgage
+            broker or solicitor, we can recommend you to our partners who can
+            assist so you could have a seamless purchase.
+          </p>
+          <p>
+            For those living abroad looking at purchasing property in Nigeria,
+            we have mortgage products available through top Nigerian banks and
+            financial institutions. banks, offering varying interest rates,
+            mortgage criteria, deposit (equity contribution) requirements with
+            repayments over a maximum period of 15 years.
+          </p>
+
+          <button>Speak to a mortgage Adviser</button>
+        </div>
+
+        <div className="m-image">
+          <img src={Mortgage} alt="A mortgage agent" />
+        </div>
+      </div>
+
+      <footer>
+        <div className="footer-links">
+          <div className="footer-grp">
+            <img
+              src={Logo}
+              alt="Logo at footer level"
+              className="footer-logo"
+            />
+            <p className="footer-grp-left">
+              Your Dream Home is no longer a dream. <br />
+              Discover homes, discover trust.
+            </p>
+          </div>
+
+          <div className="footer-grp-right">
+            <div className="footer-grp">
+              <h3>Quick Links</h3>
+              <ul className="footer-nav-links">
+                <Link to="/" className="footer-nav-item">
+                  Home
+                </Link>
+                <Link to="/properties" className="footer-nav-item">
+                  Properties
+                </Link>
+
+                <Link to="/mortgage" className="footer-nav-item">
+                  Mortgage
+                </Link>
+
+                <Link to="/about-us" className="footer-nav-item">
+                  About Us
+                </Link>
+
+                <Link to="/contact-us" className="footer-nav-item">
+                  Contact Us
+                </Link>
+              </ul>
+            </div>
+            <div className="footer-grp">
+              <h3>Services</h3>
+              <ul className="footer-nav-links">
+                <li className="footer-nav-item">Buy A Home</li>
+                <li className="footer-nav-item">Sell A Home</li>
+                <li className="footer-nav-item">Rent A Home</li>
+                <li className="footer-nav-item">Mortgage</li>
+                <li className="footer-nav-item">Real Estate Financing</li>
+              </ul>
+            </div>
+
+            <div className="footer-grp">
+              <h3>Contacts</h3>
+              <ul className="footer-nav-links">
+                <li className="footer-nav-item">
+                  <FontAwesomeIcon
+                    icon={faLocationDot}
+                    className="footer-icon"
+                  />
+                  <div className="footer-details">
+                    <p> 44 Obafemi Awolowo Way Ikeja Lagos State, Nigeria</p>
+                    <p>
+                      20-22 Wenlock Road Hoxton London N1 7TA, United Kingdom
+                    </p>
+                  </div>
+                </li>
+                <li className="footer-nav-item">
+                  <FontAwesomeIcon
+                    icon={faPhoneVolume}
+                    className="footer-icon"
+                  />
+                  <div className="footer-details">
+                    <p>+234-816-639-3760</p>
+                    <p>+971-527-790-821</p>
+                    <p>+44-207-863-7820</p>
+                  </div>
+                </li>
+                <li className="footer-nav-item">
+                  <FontAwesomeIcon icon={faAt} className="footer-icon" />
+                  <div className="footer-details">
+                    <p>info@pevronestate.com</p>
+                    <p>sales@pevronestate.com</p>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
-        )}
+        </div>
 
-        {propertyData.length === 0 && (
-          <p>No properties at the moment, please check back later</p>
-        )}
-      </div>
+        <p className="copyright">
+          &copy; Copyright Pevron Homes 2024. All right reserved
+        </p>
+      </footer>
     </div>
   );
 };
