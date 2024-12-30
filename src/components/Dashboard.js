@@ -103,7 +103,13 @@ const Dashboard = () => {
             </p>
 
             <p className="d-hero-text-last">Discover homes, discover trust.</p>
-            <button className="cta">Make An Enquiry</button>
+            <a
+              href="https://wa.me/2348039735678"
+              target="_blank"
+              className="cta"
+            >
+              Make An Enquiry
+            </a>
           </div>
           <img
             src={HeroImage}
@@ -200,9 +206,15 @@ const Dashboard = () => {
                         )}
                       </div>
                     </div>
-                    <button className="p-price">
-                      <span>{formatPrice(property.price, currencySymbol)}</span>
-                    </button>
+                    <div className="p-price">
+                      {property.price === 0 ? (
+                        'SOLD OUT'
+                      ) : (
+                        <span>
+                          {formatPrice(property.price, currencySymbol)}
+                        </span>
+                      )}
+                    </div>
                   </div>
                 ))}
               </div>
@@ -275,7 +287,13 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <button className="about-cta-btn">Speak to an Agent</button>
+      <a
+        href="https://wa.me/2348166393760"
+        target="_blank"
+        className="about-cta-btn"
+      >
+        Speak to an Agent
+      </a>
       <div className="agent">
         <FontAwesomeIcon icon={faUsers} className="icon-users" />
         <div className="agent-notes">
@@ -287,7 +305,13 @@ const Dashboard = () => {
           </p>
         </div>
 
-        <button className="btn-agent">Join Now</button>
+        <a
+          href="https://wa.me/2348039735678"
+          target="_blank"
+          className="btn-agent"
+        >
+          Join Now
+        </a>
       </div>
 
       <div id="mortgage">
@@ -309,7 +333,9 @@ const Dashboard = () => {
             repayments over a maximum period of 15 years.
           </p>
 
-          <button>Speak to a mortgage Adviser</button>
+          <a href="https://wa.me/2348039735678" target="_blank">
+            Speak to a mortgage Adviser
+          </a>
         </div>
 
         <div className="m-image">

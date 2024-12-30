@@ -19,7 +19,10 @@
 
 .d-hero-text {
   width: 40%;
-  /* color: #333; */
+}
+
+.d-hero-text a {
+  text-decoration: none;
 }
 
 .d-hero-text h1 {
@@ -266,6 +269,7 @@
 }
 
 .about-cta-btn {
+  text-decoration: none;
   width: 10%;
   margin-left: 10%;
   margin-top: 0;
@@ -285,6 +289,10 @@
   margin: 5% 10% 0 10%;
   padding: 1rem 2rem;
   background-color: #c13332;
+}
+
+.agent a {
+  text-decoration: none;
 }
 
 .icon-users {
@@ -328,7 +336,9 @@
   margin-right: 3rem;
 }
 
-.m-text button {
+.m-text a {
+  text-decoration: none;
+  font-weight: 700;
   padding: 0.8rem 1.2rem;
   color: white;
   border: 1px solid #c13236;

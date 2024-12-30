@@ -25,13 +25,15 @@
   font-weight: 500;
 }
 
+.nav-links a:last-child {
+  color: white;
+}
+
 .nav-item {
   margin-right: 1.5rem;
 }
 
 .nav-item:hover {
-  /* padding: 0.5rem 1.5rem; */
-  /* background-color: #c13236; */
   color: #333;
   border-bottom: 2px solid #c13236;
 }

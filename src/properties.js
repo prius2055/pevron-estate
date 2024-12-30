@@ -7,13 +7,14 @@ import RenewedHopeThreeBrMain from './img/renewed-hope-estate/3-bedroom/1.jpg';
 import RenewedHopeFourBrMain from './img/renewed-hope-estate/4-bedroom/1.png';
 
 import AlaroCityMain from './img/Alaro-city/1.png';
+import AlaroCityMain2 from './img/Alaro-city/2.png';
 import AlaroCityCommercialMain from './img/Alaro-city/commercial/1.png';
-import AlaroCityIndustrialMain from './img/Alaro-city/commercial/1.png';
+import AlaroCityIndustrialMain from './img/Alaro-city/commercial/2.png';
 
 const properties = [
   {
     id: 1,
-    name: 'Alexandra court',
+    name: 'Alexandra Courts',
     mainImage: AlexandraCourtTwoBrMain,
     type: '2 Bedroom Terrace with BQ',
     price: 0,
@@ -24,7 +25,7 @@ const properties = [
   },
   {
     id: 2,
-    name: 'Alexandra court',
+    name: 'Alexandra Courts',
     mainImage: AlexandraCourtThreeBrMain,
     type: '3 Bedroom Terrace with BQ',
     price: 70000000,
@@ -35,7 +36,7 @@ const properties = [
   },
   {
     id: 3,
-    name: 'Alexandra court',
+    name: 'Alexandra Courts',
     mainImage: AlexandraCourtFourBrMain,
     type: '4 Bedroom Manssionette with BQ',
     price: 85000000,
@@ -92,7 +93,7 @@ const properties = [
     id: 8,
     name: 'Universal Homes',
     type: 'Apartments with Double Balcony View',
-    mainImage: AlaroCityMain,
+    mainImage: AlaroCityMain2,
     price: 142600000,
     location: 'Lekki, Lagos state',
     mortgageAvailable: 'False',

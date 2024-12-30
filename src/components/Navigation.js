@@ -27,7 +27,9 @@ const Navigation = () => {
             Contact Us
           </a>
 
-          <button className="cta">Make An Enquiry</button>
+          <a href="https://wa.me/2348039735678" target="_blank" className="cta">
+            Make An Enquiry
+          </a>
         </ul>
       </div>
     </div>
