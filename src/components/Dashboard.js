@@ -405,7 +405,7 @@ const Dashboard = () => {
         </div>
 
         <p className="copyright">
-          &copy; Copyright Pevron Homes 2024. All right reserved
+          &copy; Copyright Pevron Estate 2024. All right reserved
         </p>
       </footer>
 
