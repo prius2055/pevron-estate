@@ -27,7 +27,12 @@ const Navigation = () => {
             Contact Us
           </a>
 
-          <a href="https://wa.me/2348039735678" target="_blank" className="cta">
+          <a
+            href="https://wa.me/2348039735678"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta"
+          >
             Make An Enquiry
           </a>
         </ul>

@@ -106,6 +106,7 @@ const Dashboard = () => {
             <a
               href="https://wa.me/2348039735678"
               target="_blank"
+              rel="noopener noreferrer"
               className="cta"
             >
               Make An Enquiry
@@ -290,6 +291,7 @@ const Dashboard = () => {
       <a
         href="https://wa.me/2348166393760"
         target="_blank"
+        rel="noopener noreferrer"
         className="about-cta-btn"
       >
         Speak to an Agent
@@ -308,6 +310,7 @@ const Dashboard = () => {
         <a
           href="https://wa.me/2348039735678"
           target="_blank"
+          rel="noopener noreferrer"
           className="btn-agent"
         >
           Join Now
@@ -333,7 +336,11 @@ const Dashboard = () => {
             repayments over a maximum period of 15 years.
           </p>
 
-          <a href="https://wa.me/2348039735678" target="_blank">
+          <a
+            href="https://wa.me/2348039735678"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Speak to a mortgage Adviser
           </a>
         </div>
