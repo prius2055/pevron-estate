@@ -7,7 +7,7 @@
   color: #333;
 }
 
-.dashboard-hero {
+#hero {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -42,7 +42,7 @@
 
 /*PROPERTY*/
 
-.property-container {
+#properties {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -50,14 +50,14 @@
   padding: 0 10% 3% 10%;
 }
 
-.property-container h2 {
+#properties h2 {
   margin-top: 3rem;
   margin-bottom: 1rem;
   align-self: flex-start;
   color: #333;
 }
 
-.properties {
+.property-container {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -205,7 +205,7 @@
 
 /* ABOUT US */
 
-.about-us {
+#about-us {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -229,11 +229,11 @@
   width: 60%;
 }
 
-.about-us p {
+#about-us p {
   margin-top: 1rem;
 }
 
-.about-us h3 {
+#about-us h3 {
   margin-top: 0.5rem;
 }
 
@@ -271,10 +271,10 @@
   margin-top: 0;
   padding: 0.7rem 1rem;
   cursor: pointer;
-  color: #c13236;
   font-weight: 700;
-  background-color: white;
+  color: white;
   border: 1px solid #c13236;
+  background-color: #c13332;
   border-radius: 1rem;
 }
 
@@ -311,7 +311,7 @@
   color: white;
 }
 
-.mortgage {
+#mortgage {
   margin: 5% 10% 1% 10%;
   display: flex;
   justify-content: space-between;
@@ -330,8 +330,9 @@
 
 .m-text button {
   padding: 0.8rem 1.2rem;
-  background-color: white;
+  color: white;
   border: 1px solid #c13236;
+  background-color: #c13332;
   border-radius: 1rem;
   cursor: pointer;
 }
@@ -353,7 +354,7 @@ footer {
   padding-bottom: 1%;
 }
 
-.footer-links {
+#contact {
   margin: 0 10%;
   display: flex;
   justify-content: space-between;
@@ -420,4 +421,19 @@ footer {
   text-align: center;
   border-top: 1px solid #b2b3b7;
   color: white;
+}
+
+.nav-arrow {
+  text-decoration: none;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+
+  color: white;
+  border: 1px solid #c13236;
+  background-color: #c13236;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 0.5rem;
+  text-align: center;
 }

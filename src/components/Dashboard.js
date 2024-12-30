@@ -1,18 +1,14 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import properties from '../properties';
 import Navigation from './Navigation';
-import { Link } from 'react-router-dom';
-
-////////////////
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
-
-import properties from '../properties';
+import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
 import HeroImage from '../img/hero.png';
 import AboutImage from '../img/about-us.png';
 import IconHome from '../img/icon/house.png';
@@ -34,9 +30,12 @@ const Dashboard = () => {
     euro: useRef(null),
   };
 
+  const date = Date.now();
+  const currentDate = new Date(date).toISOString().split('T')[0];
+
   useEffect(() => {
     fetch(
-      `https://cdn.jsdelivr.net/gh/ismartcoding/currency-api/2024-12-28/01.json`
+      `https://cdn.jsdelivr.net/gh/ismartcoding/currency-api/${currentDate}/03.json`
     )
       .then((res) => res.json())
       .then((data) => {
@@ -93,7 +92,7 @@ const Dashboard = () => {
       <Navigation />
 
       <div className="dashboard">
-        <div className="dashboard-hero">
+        <div id="hero">
           <div className="d-hero-text">
             <h1>Discover A Place You'll Love To Live</h1>
             <p>
@@ -113,11 +112,11 @@ const Dashboard = () => {
           />
         </div>
 
-        <div className="property-container">
+        <div id="properties">
           <h2>Latest Properties</h2>
 
           {propertyData.length !== 0 && (
-            <div className="properties">
+            <div className="property-container">
               <div className="p-currencies">
                 <p>Show pricing in:</p>
                 <div className="p-currency-grp">
@@ -158,11 +157,7 @@ const Dashboard = () => {
 
               <div className="properties-grid">
                 {propertyData?.map((property) => (
-                  <Link
-                    // to={`/property-detail/${property.id}`}
-                    className="property-card"
-                    key={property.id}
-                  >
+                  <div className="property-card" key={property.id}>
                     <img
                       src={property.mainImage}
                       alt={property.name}
@@ -208,7 +203,7 @@ const Dashboard = () => {
                     <button className="p-price">
                       <span>{formatPrice(property.price, currencySymbol)}</span>
                     </button>
-                  </Link>
+                  </div>
                 ))}
               </div>
             </div>
@@ -219,7 +214,7 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="about-us">
+      <div id="about-us">
         <div className="about-img">
           <img src={AboutImage} alt="Hero for About section" />
         </div>
@@ -295,7 +290,7 @@ const Dashboard = () => {
         <button className="btn-agent">Join Now</button>
       </div>
 
-      <div className="mortgage">
+      <div id="mortgage">
         <div className="m-text">
           <h2>Mortage In Nigeria</h2>
           <p>
@@ -323,7 +318,7 @@ const Dashboard = () => {
       </div>
 
       <footer>
-        <div className="footer-links">
+        <div id="contact">
           <div className="footer-grp">
             <img
               src={Logo}
@@ -340,24 +335,24 @@ const Dashboard = () => {
             <div className="footer-grp">
               <h3>Quick Links</h3>
               <ul className="footer-nav-links">
-                <Link to="/" className="footer-nav-item">
+                <a href="#hero" className="footer-nav-item">
                   Home
-                </Link>
-                <Link to="/properties" className="footer-nav-item">
+                </a>
+                <a href="#property-container" className="footer-nav-item">
                   Properties
-                </Link>
+                </a>
 
-                <Link to="/mortgage" className="footer-nav-item">
+                <a href="#mortgage" className="footer-nav-item">
                   Mortgage
-                </Link>
+                </a>
 
-                <Link to="/about-us" className="footer-nav-item">
+                <a href="#about-us" className="footer-nav-item">
                   About Us
-                </Link>
+                </a>
 
-                <Link to="/contact-us" className="footer-nav-item">
+                <a href="#contact" className="footer-nav-item">
                   Contact Us
-                </Link>
+                </a>
               </ul>
             </div>
             <div className="footer-grp">
@@ -413,6 +408,11 @@ const Dashboard = () => {
           &copy; Copyright Pevron Homes 2024. All right reserved
         </p>
       </footer>
+
+      <a href="#properties" className="nav-arrow">
+        <h5>to top</h5>
+        <FontAwesomeIcon icon={faArrowUp} />
+      </a>
     </div>
   );
 };

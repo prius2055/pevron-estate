@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import './Navigation.css';
 
@@ -9,24 +8,24 @@ const Navigation = () => {
         <img src={Logo} alt="Logo of Pevron site" className="logo" />
 
         <ul className="nav-links">
-          <Link to="/" className="nav-item">
+          <a href="#hero" className="nav-item">
             Home
-          </Link>
-          <Link to="/properties" className="nav-item">
+          </a>
+          <a href="#property-container" className="nav-item">
             Properties
-          </Link>
+          </a>
 
-          <Link to="/mortgage" className="nav-item">
-            Mortgage
-          </Link>
-
-          <Link to="/about-us" className="nav-item">
+          <a href="#about-us" className="nav-item">
             About Us
-          </Link>
+          </a>
 
-          <Link to="/contact-us" className="nav-item">
+          <a href="#mortgage" className="nav-item">
+            Mortgage
+          </a>
+
+          <a href="#contact" className="nav-item">
             Contact Us
-          </Link>
+          </a>
 
           <button className="cta">Make An Enquiry</button>
         </ul>
