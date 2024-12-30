@@ -46,7 +46,7 @@ const Dashboard = () => {
           USD: data.quotes.USD,
         });
       });
-  }, []);
+  }, [currentDate]);
 
   const handleCurrencySymbolChange = (e, refKey) => {
     setCurrencySymbol(e.target.value);
