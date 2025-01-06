@@ -11,6 +11,8 @@ import AlaroCityMain2 from './img/Alaro-city/2.png';
 import AlaroCityCommercialMain from './img/Alaro-city/commercial/1.png';
 import AlaroCityIndustrialMain from './img/Alaro-city/commercial/2.png';
 
+import BromptonCityMain from './img/lands/brompton-city.jpeg';
+
 const properties = [
   {
     id: 1,
@@ -127,6 +129,42 @@ const properties = [
     mainImage: AlaroCityIndustrialMain,
     price: 341060000,
     location: 'Lekki, Lagos state',
+    mortgageAvailable: 'False',
+    description:
+      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+    otherImages: [],
+  },
+  {
+    id: 11,
+    name: 'Brompton City plots',
+    type: '300/400SQM Residential Plots',
+    mainImage: BromptonCityMain,
+    price: 88031100,
+    location: 'Ogombo Road, Lekki Scheme II, Lagos state',
+    mortgageAvailable: 'False',
+    description:
+      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+    otherImages: [],
+  },
+  {
+    id: 11,
+    name: 'Brompton City plots',
+    type: '550/600SQM Residential Plots',
+    mainImage: BromptonCityMain,
+    price: 167450800,
+    location: 'Ogombo Road, Lekki Scheme II, Lagos state',
+    mortgageAvailable: 'False',
+    description:
+      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+    otherImages: [],
+  },
+  {
+    id: 11,
+    name: 'Brompton City plots',
+    type: '900/1000SQM Residential Plots',
+    mainImage: BromptonCityMain,
+    price: 314397900,
+    location: 'Ogombo Road, Lekki Scheme II, Lagos state',
     mortgageAvailable: 'False',
     description:
       'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
