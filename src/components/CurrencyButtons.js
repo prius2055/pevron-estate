@@ -1,27 +1,9 @@
 import React, { useEffect, useState, useRef } from 'react';
-import properties from '../properties';
-import Navigation from './Navigation';
-import PropertyCard from './PropertyCard';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
-import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
-import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
-import { faAt } from '@fortawesome/free-solid-svg-icons';
-import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
-import HeroImage from '../img/hero.png';
-import AboutImage from '../img/about-us.png';
-import IconHome from '../img/icon/house.png';
-import IconBuy from '../img/icon/buy-home.png';
-import IconSale from '../img/icon/sale.png';
-import Mortgage from '../img/mortgage.jpg';
-import Logo from '../img/logo.png';
 import './Dashboard.css';
 
 const CurrencyButtons = ({ currencySymbolHandler, currencyRatesHandler }) => {
-  // const [currencySymbol, setCurrencySymbol] = useState('NGN');
   const [currencyRates, setCurrencyRates] = useState({});
-  // const [propertyData, setPropertyData] = useState(properties);
 
   const buttonRefs = {
     naira: useRef(null),
@@ -50,9 +32,6 @@ const CurrencyButtons = ({ currencySymbolHandler, currencyRatesHandler }) => {
 
   const handleCurrencySymbolChange = (e, refKey) => {
     currencySymbolHandler(e.target.value);
-
-    // console.log(currencyRates);
-    // console.log(refKey);
     currencyRatesHandler(currencyRates, refKey);
 
     // Reset all button backgrounds
@@ -68,22 +47,6 @@ const CurrencyButtons = ({ currencySymbolHandler, currencyRatesHandler }) => {
       buttonRefs[refKey].current.style.backgroundColor = '#c13236';
       buttonRefs[refKey].current.style.color = '#fff';
     }
-
-    // const conversionRates = {
-    //   naira: 1, // Assume NGN is the base currency
-    //   dollar: 1 / currencyRates.NGN,
-    //   pound: (1 / currencyRates.NGN) * currencyRates.GBP,
-    //   euro: (1 / currencyRates.NGN) * currencyRates.EUR,
-    // };
-
-    // const selectedRate = conversionRates[refKey] || 1;
-
-    // const updatedPropertyData = properties.map((property) => ({
-    //   ...property,
-    //   price: parseFloat(property.price * selectedRate).toFixed(2),
-    // }));
-
-    // setPropertyData(updatedPropertyData);
   };
 
   return (
