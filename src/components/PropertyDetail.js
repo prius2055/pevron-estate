@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
-import { useLocation } from 'react-router-dom';
 import properties from '../properties';
 import PropertyDetailNav from './PropertyDetailNav';
 import CurrencyButtons from './CurrencyButtons';
