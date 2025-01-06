@@ -9,6 +9,10 @@
   background-color: #f0f2f1;
 }
 
+.navigation a {
+  text-decoration: none;
+}
+
 .logo {
   height: 80px;
   width: 80px;
@@ -46,4 +50,28 @@
   background-color: #c13236;
   border: none;
   border-radius: 1rem;
+}
+
+@media screen and (max-width: 1048px) {
+  .navigation {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 576px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 360px) {
 }

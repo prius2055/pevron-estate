@@ -20,7 +20,8 @@ const properties = [
     price: 0,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'exquisite',
+    description:
+      'Nestled in the heart of Ibeju Lekki’s Coastal City Residential Scheme, Alexandra Courts Coastal City offers an unparalleled opportunity to live, work, and thrive in the region famously dubbed “The New Lagos.” Strategically positioned within the New Town Development Hub of the Lekki Peninsula, our estate is a masterpiece of modern design and functionality, featuring a blend of 2-bedroom and 3-bedroom flats, as well as semi-detached and fully detached duplexes. Every unit is thoughtfully crafted to deliver ultimate comfort and sophistication to our residents.',
     otherImages: [],
   },
   {
@@ -31,7 +32,8 @@ const properties = [
     price: 70000000,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'exquisite',
+    description:
+      'Nestled in the heart of Ibeju Lekki’s Coastal City Residential Scheme, Alexandra Courts Coastal City offers an unparalleled opportunity to live, work, and thrive in the region famously dubbed “The New Lagos.” Strategically positioned within the New Town Development Hub of the Lekki Peninsula, our estate is a masterpiece of modern design and functionality, featuring a blend of 2-bedroom and 3-bedroom flats, as well as semi-detached and fully detached duplexes. Every unit is thoughtfully crafted to deliver ultimate comfort and sophistication to our residents.',
     otherImages: [],
   },
   {
@@ -42,7 +44,8 @@ const properties = [
     price: 85000000,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'exquisite',
+    description:
+      'Nestled in the heart of Ibeju Lekki’s Coastal City Residential Scheme, Alexandra Courts Coastal City offers an unparalleled opportunity to live, work, and thrive in the region famously dubbed “The New Lagos.” Strategically positioned within the New Town Development Hub of the Lekki Peninsula, our estate is a masterpiece of modern design and functionality, featuring a blend of 2-bedroom and 3-bedroom flats, as well as semi-detached and fully detached duplexes. Every unit is thoughtfully crafted to deliver ultimate comfort and sophistication to our residents.',
     otherImages: [],
   },
   {
@@ -53,7 +56,8 @@ const properties = [
     price: 36000000,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'True',
-    description: 'Nice',
+    description:
+      'Strategically located in Ibeju Lekki and developed in partnership with the Federal Mortgage Bank of Nigeria, Renewed Hope City is nestled within the New Town Development Hub of the Lekki Peninsula, aptly known as “The New Lagos.” This estate features a perfect blend of 2-bedroom and 3-bedroom flats alongside terrace duplexes, all tastefully designed for ultimate comfort. With its proximity to major commercial hubs and key infrastructure, Renewed Hope City offers unmatched economic, residential, and commercial value, making it the ideal destination for modern living.',
     otherImages: [],
   },
   {
@@ -64,7 +68,8 @@ const properties = [
     price: 48000000,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'True',
-    description: 'Nice',
+    description:
+      'Strategically located in Ibeju Lekki and developed in partnership with the Federal Mortgage Bank of Nigeria, Renewed Hope City is nestled within the New Town Development Hub of the Lekki Peninsula, aptly known as “The New Lagos.” This estate features a perfect blend of 2-bedroom and 3-bedroom flats alongside terrace duplexes, all tastefully designed for ultimate comfort. With its proximity to major commercial hubs and key infrastructure, Renewed Hope City offers unmatched economic, residential, and commercial value, making it the ideal destination for modern living.',
     otherImages: [],
   },
   {
@@ -75,7 +80,8 @@ const properties = [
     price: 85000000,
     location: 'Ibeju Lekki, Lagos state',
     mortgageAvailable: 'True',
-    description: 'Nice',
+    description:
+      'Strategically located in Ibeju Lekki and developed in partnership with the Federal Mortgage Bank of Nigeria, Renewed Hope City is nestled within the New Town Development Hub of the Lekki Peninsula, aptly known as “The New Lagos.” This estate features a perfect blend of 2-bedroom and 3-bedroom flats alongside terrace duplexes, all tastefully designed for ultimate comfort. With its proximity to major commercial hubs and key infrastructure, Renewed Hope City offers unmatched economic, residential, and commercial value, making it the ideal destination for modern living.',
     otherImages: [],
   },
   {
@@ -86,7 +92,8 @@ const properties = [
     price: 124000000,
     location: 'Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'Nice',
+    description:
+      'Nestled in the heart of Alaro City Lagos, Universal Homes is a thoughtfully designed, family-friendly, master-planned community that sets the standard for contemporary living. Featuring 576 two-bedroom apartments, with the flexibility to expand into three or four bedrooms, this serene enclave combines modern elegance with tranquil surroundings. Residents enjoy a perfect balance of world-class amenities, innovative design, and Alaro City’s unwavering commitment to sustainability, greenery, and nature, creating a truly exceptional living experience.',
     otherImages: [],
   },
   {
@@ -97,7 +104,8 @@ const properties = [
     price: 142600000,
     location: 'Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'Nice',
+    description:
+      'Nestled in the heart of Alaro City Lagos, Universal Homes is a thoughtfully designed, family-friendly, master-planned community that sets the standard for contemporary living. Featuring 576 two-bedroom apartments, with the flexibility to expand into three or four bedrooms, this serene enclave combines modern elegance with tranquil surroundings. Residents enjoy a perfect balance of world-class amenities, innovative design, and Alaro City’s unwavering commitment to sustainability, greenery, and nature, creating a truly exceptional living experience.',
     otherImages: [],
   },
   {
@@ -108,7 +116,8 @@ const properties = [
     price: 302303000,
     location: 'Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'Nice',
+    description:
+      'Strategically located along the newly expanded Lekki-Epe Expressway, Alaro City Commercial Plots offer unmatched proximity to critical infrastructure, including the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These commercial plots provide unparalleled connectivity, positioning your business at the heart of a rapidly growing economic hub. With an impressive projected ROI of 64% in just five years, investing in Alaro City Commercial plots is a gateway to both strategic growth and substantial returns.',
     otherImages: [],
   },
   {
@@ -119,7 +128,8 @@ const properties = [
     price: 341060000,
     location: 'Lekki, Lagos state',
     mortgageAvailable: 'False',
-    description: 'Nice',
+    description:
+      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
     otherImages: [],
   },
 ];

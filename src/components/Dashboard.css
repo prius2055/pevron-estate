@@ -248,7 +248,7 @@
 
 .service-card {
   border: 1px solid #b2b3b7;
-  width: 500px;
+  width: 33%;
   padding: 2rem 3rem;
   text-align: center;
   border-radius: 1rem;
@@ -446,4 +446,130 @@ footer {
   width: 3rem;
   border-radius: 0.5rem;
   text-align: center;
+}
+
+.currency_buttons {
+  display: flex;
+  align-items: center;
+  padding: 2% 10% 1% 10%;
+}
+
+@media screen and (max-width: 1048px) {
+  #hero {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .d-hero-text {
+    width: 45%;
+  }
+  .d-hero-text h1 {
+    font-size: 2rem;
+  }
+
+  .d-hero-image {
+    width: 50%;
+  }
+
+  .d-hero-text a {
+    margin-top: 1rem;
+  }
+
+  #properties {
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 1%;
+  }
+
+  .property-image {
+    /* height: 230px; */
+  }
+
+  .p-card-notes {
+    padding: 0.3rem 0.8rem;
+  }
+
+  .p-card-notes svg {
+    width: 0.8rem;
+  }
+
+  .p-details p {
+    font-size: 0.8rem;
+  }
+
+  .p-mortgage {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .p-mortgage p {
+    font-size: 10px;
+  }
+
+  .p-location,
+  .p-type {
+    text-align: left;
+  }
+
+  #about-us {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .services {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .about-cta-btn {
+    margin-left: 5%;
+    width: 17%;
+  }
+
+  .agent {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .icon-users {
+    width: 2rem;
+    height: 2rem;
+    padding: 1.5rem;
+  }
+
+  .btn-agent {
+    padding: 0.3rem 0.6rem;
+    font-size: 12px;
+  }
+
+  .agent-notes {
+    width: 80%;
+  }
+
+  #mortgage {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #contact {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@media screen and (max-width: 960px) {
+}
+
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 576px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 360px) {
 }

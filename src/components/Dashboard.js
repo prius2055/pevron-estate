@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useRef } from 'react';
 import properties from '../properties';
 import Navigation from './Navigation';
+import PropertyCard from './PropertyCard';
+import CurrencyButtons from './CurrencyButtons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
-import { faBed } from '@fortawesome/free-solid-svg-icons';
-import { faHouse } from '@fortawesome/free-solid-svg-icons';
+
 import { faPhoneVolume } from '@fortawesome/free-solid-svg-icons';
 import { faAt } from '@fortawesome/free-solid-svg-icons';
 import { faArrowUp } from '@fortawesome/free-solid-svg-icons';
@@ -16,76 +17,31 @@ import IconBuy from '../img/icon/buy-home.png';
 import IconSale from '../img/icon/sale.png';
 import Mortgage from '../img/mortgage.jpg';
 import Logo from '../img/logo.png';
+
 import './Dashboard.css';
 
 const Dashboard = () => {
   const [currencySymbol, setCurrencySymbol] = useState('NGN');
-  const [currencyRates, setCurrencyRates] = useState({});
   const [propertyData, setPropertyData] = useState(properties);
 
-  const buttonRefs = {
-    naira: useRef(null),
-    dollar: useRef(null),
-    pound: useRef(null),
-    euro: useRef(null),
+  const handleCurrencySymbol = (data) => {
+    setCurrencySymbol(data);
   };
 
-  const date = Date.now();
-  const currentDate = new Date(date).toISOString().split('T')[0];
-
-  useEffect(() => {
-    fetch(
-      `https://cdn.jsdelivr.net/gh/ismartcoding/currency-api/${currentDate}/03.json`
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        setCurrencyRates({
-          EUR: data.quotes.EUR,
-          GBP: data.quotes.GBP,
-          NGN: data.quotes.NGN,
-          USD: data.quotes.USD,
-        });
-      });
-  }, [currentDate]);
-
-  const handleCurrencySymbolChange = (e, refKey) => {
-    setCurrencySymbol(e.target.value);
-
-    // Reset all button backgrounds
-    Object.values(buttonRefs).forEach((ref) => {
-      if (ref.current) {
-        ref.current.style.backgroundColor = '#fff';
-        ref.current.style.color = '#333';
-      }
-    });
-
-    // Change the background of the clicked button
-    if (buttonRefs[refKey]?.current) {
-      buttonRefs[refKey].current.style.backgroundColor = '#c13236';
-      buttonRefs[refKey].current.style.color = '#fff';
-    }
-
+  const handleCurrencyRates = (currencyRates, refKey) => {
     const conversionRates = {
       naira: 1, // Assume NGN is the base currency
       dollar: 1 / currencyRates.NGN,
       pound: (1 / currencyRates.NGN) * currencyRates.GBP,
       euro: (1 / currencyRates.NGN) * currencyRates.EUR,
     };
-
     const selectedRate = conversionRates[refKey] || 1;
-
     const updatedPropertyData = properties.map((property) => ({
       ...property,
       price: parseFloat(property.price * selectedRate).toFixed(2),
     }));
-
     setPropertyData(updatedPropertyData);
   };
-
-  const formatPrice = (value, currency) =>
-    new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(
-      value
-    );
 
   return (
     <div className="dashboard-container">
@@ -124,104 +80,22 @@ const Dashboard = () => {
 
           {propertyData.length !== 0 && (
             <div className="property-container">
-              <div className="p-currencies">
-                <p>Show pricing in:</p>
-                <div className="p-currency-grp">
-                  <button
-                    className="btn-naira"
-                    value="NGN"
-                    ref={buttonRefs.naira}
-                    onClick={(e) => handleCurrencySymbolChange(e, 'naira')}
-                  >
-                    NGN
-                  </button>
-                  <button
-                    className="btn-dollar"
-                    value="USD"
-                    ref={buttonRefs.dollar}
-                    onClick={(e) => handleCurrencySymbolChange(e, 'dollar')}
-                  >
-                    USD
-                  </button>
-                  <button
-                    className="btn-pound"
-                    value="GBP"
-                    ref={buttonRefs.pound}
-                    onClick={(e) => handleCurrencySymbolChange(e, 'pound')}
-                  >
-                    GBP
-                  </button>
-                  <button
-                    className="btn-euro"
-                    value="EUR"
-                    ref={buttonRefs.euro}
-                    onClick={(e) => handleCurrencySymbolChange(e, 'euro')}
-                  >
-                    EUR
-                  </button>
-                </div>
-              </div>
+              <CurrencyButtons
+                currencySymbolHandler={handleCurrencySymbol}
+                currencyRatesHandler={handleCurrencyRates}
+              />
 
               <div className="properties-grid">
                 {propertyData?.map((property) => (
-                  <div className="property-card" key={property.id}>
-                    <img
-                      src={property.mainImage}
-                      alt={property.name}
-                      className="property-image"
-                    />
-                    <div className="p-card-notes">
-                      <div className="p-name">
-                        <FontAwesomeIcon
-                          icon={faHouse}
-                          className="p-card-icon"
-                        />
-                        <h3>{property.name}</h3>
-                      </div>
-
-                      <div className="p-details">
-                        <div>
-                          <div className="p-type">
-                            <FontAwesomeIcon
-                              icon={faBed}
-                              className="p-card-icon"
-                            />
-                            <p>{property.type}</p>
-                          </div>
-                          <div className="p-location">
-                            <FontAwesomeIcon
-                              icon={faLocationDot}
-                              className="p-card-icon"
-                            />
-                            <p>{property.location}</p>
-                          </div>
-                        </div>
-
-                        {property.mortgageAvailable === 'True' ? (
-                          <div className="p-mortgage">
-                            <p>Mortgage</p>
-                            <p>Available</p>
-                          </div>
-                        ) : (
-                          ''
-                        )}
-                      </div>
-                    </div>
-                    <div className="p-price">
-                      {property.price === 0 ? (
-                        'SOLD OUT'
-                      ) : (
-                        <span>
-                          {formatPrice(property.price, currencySymbol)}
-                        </span>
-                      )}
-                    </div>
-                  </div>
+                  <PropertyCard
+                    property={property}
+                    currencySymbol={currencySymbol}
+                  />
                 ))}
               </div>
             </div>
           )}
-          {properties.length === 0 && (
+          {propertyData.length === 0 && (
             <p>No properties at the moment, please check back later</p>
           )}
         </div>
@@ -280,10 +154,11 @@ const Dashboard = () => {
         </div>
         <div className="service-card">
           <img src={IconSale} alt="Sell a home icon" />
-          <h4>Sell a Home</h4>
+          <h4>Buy a Plot</h4>
           <p>
-            Have a home, you wish to put up for sale? we can match you with
-            clients.
+            Residential, Commercial and Industrial Plots in major city locations
+            available for sale. We have plots that match your lifestyle and
+            business.
           </p>
         </div>
       </div>

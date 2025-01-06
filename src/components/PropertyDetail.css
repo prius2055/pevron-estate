@@ -1,0 +1,51 @@
+.property_details {
+  position: relative;
+  padding: 0 10%;
+  display: flex;
+  justify-content: space-between;
+}
+.property_details img {
+  width: 65%;
+  height: 600px;
+  border-radius: 0.5rem;
+}
+
+.p_detail_right {
+  width: 30%;
+}
+
+.description_property {
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.price_property,
+.location_property {
+  background-color: #f0f2f1;
+}
+
+.price_property,
+.location_property,
+.type_property {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.detail_cta_btn {
+  background-color: #c13236;
+  border: 1px solid #c13236;
+  border-radius: 0.5rem;
+  padding: 0.5rem 2rem;
+  color: white;
+  font-weight: 700;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.mortgage_property {
+  position: absolute;
+  right: 10%;
+}
