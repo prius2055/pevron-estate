@@ -8,7 +8,7 @@ const PropertyDetailNav = () => {
       <div className="navigation">
         <img src={Logo} alt="Logo of Pevron site" className="logo" />
 
-        <Link to="/" className="cta" target="_blank" rel="noopener noreferrer">
+        <Link to="/" className="cta">
           Back To Properties
         </Link>
       </div>

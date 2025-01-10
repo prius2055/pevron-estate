@@ -84,7 +84,12 @@ const PropertyDetail = () => {
             ) : (
               ''
             )}
-            <Link className="detail_cta_btn" to="/contacts">
+            <Link
+              className="detail_cta_btn"
+              to="/contacts"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               Enquiry
             </Link>
           </div>

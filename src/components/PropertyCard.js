@@ -21,6 +21,8 @@ const PropertyCard = ({ property, currencySymbol }) => {
       className="property-card"
       key={property.id}
       state={currencySymbolData}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <img
         src={property.mainImage}
