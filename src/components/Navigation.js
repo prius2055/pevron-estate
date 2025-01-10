@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Logo from '../img/logo.png';
 import './Navigation.css';
 
@@ -27,14 +28,14 @@ const Navigation = () => {
             Contact Us
           </a>
 
-          <a
-            href="https://wa.me/2348039735678"
+          <Link
+            to="/contacts"
             target="_blank"
             rel="noopener noreferrer"
             className="cta"
           >
-            Make An Enquiry
-          </a>
+            Enquiry
+          </Link>
         </ul>
       </div>
     </div>

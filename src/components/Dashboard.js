@@ -19,6 +19,7 @@ import Mortgage from '../img/mortgage.jpg';
 import Logo from '../img/logo.png';
 
 import './Dashboard.css';
+import { Link } from 'react-router-dom';
 
 const Dashboard = () => {
   const [currencySymbol, setCurrencySymbol] = useState('NGN');
@@ -59,14 +60,14 @@ const Dashboard = () => {
             </p>
 
             <p className="d-hero-text-last">Discover homes, discover trust.</p>
-            <a
-              href="https://wa.me/2348039735678"
+            <Link
+              to="/contacts"
+              className="cta"
               target="_blank"
               rel="noopener noreferrer"
-              className="cta"
             >
-              Make An Enquiry
-            </a>
+              Talk to Us
+            </Link>
           </div>
           <img
             src={HeroImage}
@@ -163,14 +164,14 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <a
-        href="https://wa.me/2348166393760"
+      <Link
+        to="/contacts"
+        className="about-cta-btn"
         target="_blank"
         rel="noopener noreferrer"
-        className="about-cta-btn"
       >
         Speak to an Agent
-      </a>
+      </Link>
       <div className="agent">
         <FontAwesomeIcon icon={faUsers} className="icon-users" />
         <div className="agent-notes">
@@ -211,13 +212,9 @@ const Dashboard = () => {
             repayments over a maximum period of 15 years.
           </p>
 
-          <a
-            href="https://wa.me/2348039735678"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link to="/contacts" target="_blank" rel="noopener noreferrer">
             Speak to a mortgage Adviser
-          </a>
+          </Link>
         </div>
 
         <div className="m-image">
@@ -295,9 +292,22 @@ const Dashboard = () => {
                     className="footer-icon"
                   />
                   <div className="footer-details">
-                    <p>+234-816-639-3760</p>
-                    <p>+971-527-790-821</p>
-                    <p>+44-207-863-7820</p>
+                    <div>
+                      <span>Nigeria</span>
+                      <span>+234-816-639-3760</span>
+                    </div>
+                    <div>
+                      <span>Dubai</span>
+                      <span>+971-527-790-821</span>
+                    </div>
+                    <div>
+                      <span>UK</span>
+                      <span>+44-207-863-7820</span>
+                    </div>
+                    <div>
+                      <span>Ireland</span>
+                      <span>+353879017005</span>
+                    </div>
                   </div>
                 </li>
                 <li className="footer-nav-item">

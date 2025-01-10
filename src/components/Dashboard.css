@@ -21,10 +21,6 @@
   width: 40%;
 }
 
-.d-hero-text a {
-  text-decoration: none;
-}
-
 .d-hero-text h1 {
   font-size: 3rem;
   font-weight: 900;
@@ -246,6 +242,10 @@
   justify-content: space-between;
 }
 
+a {
+  text-decoration: none;
+}
+
 .service-card {
   border: 1px solid #b2b3b7;
   width: 33%;
@@ -269,7 +269,6 @@
 }
 
 .about-cta-btn {
-  text-decoration: none;
   width: 10%;
   margin-left: 10%;
   margin-top: 0;
@@ -422,7 +421,13 @@ footer {
 }
 
 .footer-details p {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+.footer-details div {
+  display: flex;
+  justify-content: space-between;
+  width: 13rem;
+  margin-bottom: 0.2rem;
 }
 
 .copyright {
@@ -454,6 +459,110 @@ footer {
   padding: 2% 10% 1% 10%;
 }
 
+.modal_form_container {
+  position: absolute;
+  top: 0;
+  height: 500vh;
+  width: 100%;
+  background-color: #333;
+  opacity: 0.97;
+}
+
+.contact_container {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  padding: 2%;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 0.3rem;
+}
+
+.contact_container h3 {
+  margin-bottom: 2%;
+  font-weight: 700;
+  color: #c13236;
+}
+
+.contact_details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+.form-element {
+  display: flex;
+  flex-direction: column;
+  display: flex;
+  width: 50%;
+  margin-right: 2%;
+}
+
+.form-element input,
+.form-element textarea,
+.form-element button {
+  margin-bottom: 5%;
+  padding: 2%;
+  border-radius: 0.3rem;
+  border: 1px solid #c13236;
+  font-size: 1rem;
+}
+
+.form-element button {
+  padding: 2% 4%;
+  border: 1px solid #c13236;
+  background-color: #c13236;
+  font-size: 1rem;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.form_details {
+  background-color: #c13236;
+  padding: 1% 2%;
+  border-radius: 0.3rem;
+}
+
+.success_container {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding: 2%;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
+.success_container h3 {
+  color: #c13236;
+}
+.success_container p {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  font-style: italic;
+}
+
+.success_container a {
+  padding: 2% 4%;
+  border: 1px solid #c13236;
+  background-color: #c13236;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.success_icon {
+  color: white;
+  background-color: #c13236;
+  width: 5rem;
+  height: 5rem;
+  margin-top: 5%;
+  padding: 5%;
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 1048px) {
   #hero {
     padding-left: 5%;
@@ -479,10 +588,6 @@ footer {
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 1%;
-  }
-
-  .property-image {
-    /* height: 230px; */
   }
 
   .p-card-notes {
