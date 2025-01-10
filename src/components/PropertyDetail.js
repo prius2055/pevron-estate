@@ -5,6 +5,7 @@ import PropertyDetailNav from './PropertyDetailNav';
 import CurrencyButtons from './CurrencyButtons';
 
 import './PropertyDetail.css';
+import { Link } from 'react-router-dom';
 
 const PropertyDetail = () => {
   const params = useParams();
@@ -83,7 +84,9 @@ const PropertyDetail = () => {
             ) : (
               ''
             )}
-            <button className="detail_cta_btn">Enquiry</button>
+            <Link className="detail_cta_btn" to="/contacts">
+              Enquiry
+            </Link>
           </div>
 
           {/* <Link to="/new-appointment" state={{ furniture: filteredProperty }}>
