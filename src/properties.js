@@ -12,6 +12,7 @@ import AlaroCityCommercialMain from './img/Alaro-city/commercial/1.png';
 import AlaroCityIndustrialMain from './img/Alaro-city/commercial/2.png';
 
 import BromptonCityMain from './img/lands/brompton-city.jpeg';
+import SangotedoCityMain from './img/lands/sangotedo.jpeg';
 
 const properties = [
   {
@@ -143,7 +144,7 @@ const properties = [
     location: 'Ogombo Road, Lekki Scheme II, Lagos state',
     mortgageAvailable: 'False',
     description:
-      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+      'Located along the newly upgraded Lekki-Epe Expressway, Brompton City Residential plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
     otherImages: [],
   },
   {
@@ -155,7 +156,7 @@ const properties = [
     location: 'Ogombo Road, Lekki Scheme II, Lagos state',
     mortgageAvailable: 'False',
     description:
-      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+      'Located along the newly upgraded Lekki-Epe Expressway, Brompton City Residential plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
     otherImages: [],
   },
   {
@@ -167,7 +168,19 @@ const properties = [
     location: 'Ogombo Road, Lekki Scheme II, Lagos state',
     mortgageAvailable: 'False',
     description:
-      'Located along the newly upgraded Lekki-Epe Expressway, Alaro City industrial plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+      'Located along the newly upgraded Lekki-Epe Expressway, Brompton City Residential plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+    otherImages: [],
+  },
+  {
+    id: 12,
+    name: 'Sangotedo City',
+    type: '327.11SQM Residential Plots',
+    mainImage: SangotedoCityMain,
+    price: 67015350,
+    location: 'Monastery Road, Sangotedo, Lekki, Lagos',
+    mortgageAvailable: 'False',
+    description:
+      'Located along the newly upgraded Lekki-Epe Expressway, Sangotedo City Residential plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
     otherImages: [],
   },
 ];
