@@ -12,8 +12,6 @@ const PropertyCard = ({ property, currencySymbol }) => {
       value
     );
 
-  //   console.log(Card);
-  //   console.log(currencySymbol);
 
   return (
     <Link

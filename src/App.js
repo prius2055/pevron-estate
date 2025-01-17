@@ -5,6 +5,7 @@ import Contacts from './components/Contacts';
 
 import './App.css';
 import SuccessFlashMessage from './components/SuccessFlashMessage';
+import ErrorMessage from './components/ErrorMessage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/properties/:id" element={<PropertyDetail />} />
         <Route path="/contacts" element={<Contacts />} />
         <Route path="/success" element={<SuccessFlashMessage />} />
+        <Route path="/error" element={<ErrorMessage />} />
       </Routes>
     </div>
   );

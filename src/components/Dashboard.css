@@ -563,6 +563,17 @@ footer {
   border-radius: 50%;
 }
 
+.spinner_container {
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  padding: 2%;
+  margin-top: 10%;
+  background-color: white;
+  border-radius: 0.3rem;
+  text-align: center;
+}
+
 @media screen and (max-width: 1048px) {
   #hero {
     padding-left: 5%;

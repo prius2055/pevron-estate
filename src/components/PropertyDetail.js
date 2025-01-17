@@ -93,20 +93,6 @@ const PropertyDetail = () => {
               Enquiry
             </Link>
           </div>
-
-          {/* <Link to="/new-appointment" state={{ furniture: filteredProperty }}>
-              <button type="submit" className="reserver_furniture">
-                {' '}
-                Book appointment
-                <i className="fa fa-arrow-circle-o-right" />
-              </button>
-            </Link> */}
-
-          {/* <Link to="/dashboard">
-              <button type="submit" className="back_furniture">
-                <i className="fa fa-arrow-left" />
-              </button>
-            </Link> */}
         </div>
       )}
     </div>
