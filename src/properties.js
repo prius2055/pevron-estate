@@ -219,7 +219,7 @@ const properties = [
   {
     id: 15,
     name: 'Dantata Gardens',
-    type: '4 Bedroom Terraced Duplex with BQ',
+    type: '4 Bed Terraced Duplex with BQ',
     mainImage: DantataGardens3,
     price: 46300500,
     location: 'Karsana, Abuja',
