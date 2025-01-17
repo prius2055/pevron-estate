@@ -14,6 +14,15 @@ import AlaroCityIndustrialMain from './img/Alaro-city/commercial/2.png';
 import BromptonCityMain from './img/lands/brompton-city.jpeg';
 import SangotedoCityMain from './img/lands/sangotedo.jpeg';
 
+import DantataGardens from './img/dantata-gardens/5bd.png';
+import DantataGardens3 from './img/dantata-gardens/4bsd.png';
+import DantataGardens2 from './img/dantata-gardens/4btd.png';
+import DantataGardens4 from './img/dantata-gardens/bofs.png';
+
+import LakeBohan from './img/lake-bohan/5bsd.png';
+import LakeBohan2 from './img/lake-bohan/4btd.png';
+import LakeBohan3 from './img/lake-bohan/3bof.png';
+
 const properties = [
   {
     id: 1,
@@ -181,6 +190,90 @@ const properties = [
     mortgageAvailable: 'False',
     description:
       'Located along the newly upgraded Lekki-Epe Expressway, Sangotedo City Residential plots offer seamless access to key infrastructure such as the Lekki Deep Sea Port, the upcoming New Lagos International Airport, and the 4th Mainland Bridge. These plots are strategically designed to cater to industrial growth within a thriving economic hub, delivering an outstanding projected ROI of 95% within 5 years. Invest in these Industrial plots and secure your place in a future of unparalleled opportunities.',
+    otherImages: [],
+  },
+  {
+    id: 13,
+    name: 'Dantata Gardens',
+    type: '5 Bedroom Duplex Apartment',
+    mainImage: DantataGardens,
+    price: 99900000,
+    location: 'Karsana, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Dantata Gardens is a premium estate in the serene neighborhood of Karsana, Abuja, offering a range of exquisitely designed homes, including 5 and 4-bedroom fully detached duplexes, 4-bedroom semi-detached duplexes, and 1, 2, and 3-bedroom flats. Perfectly blending luxury and functionality, the estate features contemporary architecture, lush landscaping, round-the-clock security, and family-friendly amenities. Located just minutes from the city center, Dantata Gardens provides a peaceful retreat with easy access to major roads and essential services, making it the ideal choice for modern living.',
+    otherImages: [],
+  },
+  {
+    id: 14,
+    name: 'Dantata Gardens',
+    type: '4 Bedroom Semi-Duplex Apartment',
+    mainImage: DantataGardens2,
+    price: 51100500,
+    location: 'Karsana, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Dantata Gardens is a premium estate in the serene neighborhood of Karsana, Abuja, offering a range of exquisitely designed homes, including 5 and 4-bedroom fully detached duplexes, 4-bedroom semi-detached duplexes, and 1, 2, and 3-bedroom flats. Perfectly blending luxury and functionality, the estate features contemporary architecture, lush landscaping, round-the-clock security, and family-friendly amenities. Located just minutes from the city center, Dantata Gardens provides a peaceful retreat with easy access to major roads and essential services, making it the ideal choice for modern living.',
+    otherImages: [],
+  },
+  {
+    id: 15,
+    name: 'Dantata Gardens',
+    type: '4 Bedroom Terraced Duplex with BQ',
+    mainImage: DantataGardens3,
+    price: 46300500,
+    location: 'Karsana, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Dantata Gardens is a premium estate in the serene neighborhood of Karsana, Abuja, offering a range of exquisitely designed homes, including 5 and 4-bedroom fully detached duplexes, 4-bedroom semi-detached duplexes, and 1, 2, and 3-bedroom flats. Perfectly blending luxury and functionality, the estate features contemporary architecture, lush landscaping, round-the-clock security, and family-friendly amenities. Located just minutes from the city center, Dantata Gardens provides a peaceful retreat with easy access to major roads and essential services, making it the ideal choice for modern living.',
+    otherImages: [],
+  },
+  {
+    id: 16,
+    name: 'Dantata Gardens',
+    type: '1,2,3 Bedroom Block of flats',
+    mainImage: DantataGardens4,
+    price: 46300500,
+    location: 'Karsana, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Dantata Gardens is a premium estate in the serene neighborhood of Karsana, Abuja, offering a range of exquisitely designed homes, including 5 and 4-bedroom fully detached duplexes, 4-bedroom semi-detached duplexes, and 1, 2, and 3-bedroom flats. Perfectly blending luxury and functionality, the estate features contemporary architecture, lush landscaping, round-the-clock security, and family-friendly amenities. Located just minutes from the city center, Dantata Gardens provides a peaceful retreat with easy access to major roads and essential services, making it the ideal choice for modern living.',
+    otherImages: [],
+  },
+  {
+    id: 17,
+    name: 'Lake Bohan Estate',
+    type: '5 Bed Semi-detached Duplex',
+    mainImage: LakeBohan,
+    price: 80000000,
+    location: 'Lokogoma, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Nestled in the heart of Lokogoma, Abuja, Lake Bohen Estate offers a harmonious blend of elegance and comfort with its 5 and 4-bedroom semi-detached duplexes and stylish 3-bedroom flats. Designed for modern living, the estate features contemporary architecture, secure gated access, and serene surroundings, making it an ideal haven for families and professionals. With easy access to major roads, schools, and shopping centers, Lake Bohen Estate combines convenience and tranquility to provide the perfect living experience.',
+    otherImages: [],
+  },
+  {
+    id: 18,
+    name: 'Lake Bohan Estate',
+    type: ' 4 Bedroom Terrace Duplex',
+    mainImage: LakeBohan2,
+    price: 70000000,
+    location: 'Lokogoma, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Nestled in the heart of Lokogoma, Abuja, Lake Bohen Estate offers a harmonious blend of elegance and comfort with its 5 and 4-bedroom semi-detached duplexes and stylish 3-bedroom flats. Designed for modern living, the estate features contemporary architecture, secure gated access, and serene surroundings, making it an ideal haven for families and professionals. With easy access to major roads, schools, and shopping centers, Lake Bohen Estate combines convenience and tranquility to provide the perfect living experience.',
+    otherImages: [],
+  },
+  {
+    id: 19,
+    name: 'Lake Bohan Estate',
+    type: '3 Bedroom Block of flats',
+    mainImage: LakeBohan3,
+    price: 45000000,
+    location: 'Lokogoma, Abuja',
+    mortgageAvailable: 'True',
+    description:
+      'Nestled in the heart of Lokogoma, Abuja, Lake Bohen Estate offers a harmonious blend of elegance and comfort with its 5 and 4-bedroom semi-detached duplexes and stylish 3-bedroom flats. Designed for modern living, the estate features contemporary architecture, secure gated access, and serene surroundings, making it an ideal haven for families and professionals. With easy access to major roads, schools, and shopping centers, Lake Bohen Estate combines convenience and tranquility to provide the perfect living experience.',
     otherImages: [],
   },
 ];
