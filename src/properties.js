@@ -23,6 +23,10 @@ import LakeBohan from './img/lake-bohan/5bsd.png';
 import LakeBohan2 from './img/lake-bohan/4btd.png';
 import LakeBohan3 from './img/lake-bohan/3bof.png';
 
+import GrandLuvuTwoBr from './img/grand-luvu/1.jpeg';
+import GrandLuvuTwoBrSD from './img/grand-luvu/1.jpeg';
+import GrandLuvuOneBr from './img/grand-luvu/1.jpeg';
+
 const properties = [
   {
     id: 1,
@@ -274,6 +278,42 @@ const properties = [
     mortgageAvailable: 'True',
     description:
       'Nestled in the heart of Lokogoma, Abuja, Lake Bohen Estate offers a harmonious blend of elegance and comfort with its 5 and 4-bedroom semi-detached duplexes and stylish 3-bedroom flats. Designed for modern living, the estate features contemporary architecture, secure gated access, and serene surroundings, making it an ideal haven for families and professionals. With easy access to major roads, schools, and shopping centers, Lake Bohen Estate combines convenience and tranquility to provide the perfect living experience.',
+    otherImages: [],
+  },
+  {
+    id: 20,
+    name: 'Grand Luvu Estate 3',
+    type: '2-Bed Bungalow',
+    mainImage: GrandLuvuTwoBr,
+    price: 11000000,
+    location: 'Masaka, Nassarawa',
+    mortgageAvailable: 'True',
+    description:
+      'Grand Luvu Estate is a premium residential community in Masaka, Nasarawa State, offering 1-bedroom and 2-bedroom expandable homes in semi-detached and fully detached designs. Just minutes from Abuja, the estate provides a secure, serene, and well-planned environment with 24/7 security, paved roads, and green spaces. Homes are available in carcass for customization or semi-finished for a move-in-ready experience, making it ideal for both homeowners and investors. Limited units available—contact us today to secure your home!',
+    otherImages: [],
+  },
+  {
+    id: 21,
+    name: 'Grand Luvu Estate 3',
+    type: '2-Bed S/Detached Bungalow',
+    mainImage: GrandLuvuTwoBrSD,
+    price: 8500000,
+    location: 'Masaka, Nassarawa',
+    mortgageAvailable: 'True',
+    description:
+      'Grand Luvu Estate is a premium residential community in Masaka, Nasarawa State, offering 1-bedroom and 2-bedroom expandable homes in semi-detached and fully detached designs. Just minutes from Abuja, the estate provides a secure, serene, and well-planned environment with 24/7 security, paved roads, and green spaces. Homes are available in carcass for customization or semi-finished for a move-in-ready experience, making it ideal for both homeowners and investors. Limited units available—contact us today to secure your home!',
+    otherImages: [],
+  },
+  {
+    id: 20,
+    name: 'Grand Luvu Estate 3',
+    type: '1-Bed S/Detached Bungalow',
+    mainImage: GrandLuvuTwoBr,
+    price: 6500000,
+    location: 'Masaka, Nassarawa',
+    mortgageAvailable: 'True',
+    description:
+      'Grand Luvu Estate is a premium residential community in Masaka, Nasarawa State, offering 1-bedroom and 2-bedroom expandable homes in semi-detached and fully detached designs. Just minutes from Abuja, the estate provides a secure, serene, and well-planned environment with 24/7 security, paved roads, and green spaces. Homes are available in carcass for customization or semi-finished for a move-in-ready experience, making it ideal for both homeowners and investors. Limited units available—contact us today to secure your home!',
     otherImages: [],
   },
 ];

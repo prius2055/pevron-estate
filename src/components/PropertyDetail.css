@@ -33,7 +33,11 @@
   margin-bottom: 0.5rem;
 }
 
-a{
+.location_property {
+  margin-bottom: 1.5rem;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -44,7 +48,6 @@ a{
   padding: 0.5rem 2rem;
   color: white;
   font-weight: 700;
-  margin-top: 2rem;
   cursor: pointer;
 }
 

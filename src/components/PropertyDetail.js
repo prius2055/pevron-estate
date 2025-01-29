@@ -75,7 +75,6 @@ const PropertyDetail = () => {
               <span>Location:</span>
               <span>{filteredProperty.location}</span>
             </p>
-
             {filteredProperty.mortgageAvailable === 'True' ? (
               <div className="p-mortgage mortgage_property">
                 <p>Mortgage</p>
