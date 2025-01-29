@@ -308,7 +308,7 @@ const properties = [
     id: 20,
     name: 'Grand Luvu Estate 3',
     type: '1-Bed S/Detached Bungalow',
-    mainImage: GrandLuvuTwoBr,
+    mainImage: GrandLuvuOneBr,
     price: 6500000,
     location: 'Masaka, Nassarawa',
     mortgageAvailable: 'True',
