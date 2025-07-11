@@ -679,13 +679,303 @@ footer {
 @media screen and (max-width: 768px) {
 }
 @media screen and (max-width: 640px) {
+      #hero {
+        padding: 5%;
+    }
+
+      .d-hero-text h1 {
+        font-size: 1.5rem;
+    }
+
+    .d-hero-text p {
+    font-size: 14px;
 }
 
+.property-card {
+  
+    width: 49.4%;
+   
+}
+
+.p-price {
+    
+    font-size: 1.1rem;
+   
+}
+
+.p-mortgage {
+  
+    font-weight: 600;
+  }
+
+      .p-card-notes {
+        padding: 0.2rem 0.5rem;
+        align-items: flex-start;
+    }
+
+  .p-name,.p-type{
+    margin-bottom: 0.5rem;
+  }
+
+   .about-cta-btn {
+    width: 28%;
+    font-size: 16.5px;
+ 
+}
+
+.agent {
+
+    padding: 0.3rem 0.8rem;
+ 
+}
+
+    .icon-users {
+        width: 1.5rem;
+        height: 1.5rem;
+        padding: 0.8rem;
+    }
+
+    .agent-notes h2 {
+        font-size: 20px;
+    }
+
+    .agent-notes p {
+        font-size: 12px;
+    }
+
+        .btn-agent {
+       width: 15%;
+      
+    }
+
+        .footer-grp {
+        width: 20%;
+    }
+
+    .footer-logo {
+    height: 50px;
+    width: 50px;
+  }
+
+  .footer-grp-left {
+    font-size: 12px;
+  
+}
+
+    .footer-grp-right {
+    width: 75%;
+  }
+    .footer-grp-right .footer-grp {
+    width: 60%;
+  }
+
+
+}
+
+
+
 @media screen and (max-width: 576px) {
+
 }
 
 @media screen and (max-width: 480px) {
+      .logo {
+        height: 40px;
+        width: 40px;
+    }
+      .nav-item {
+        font-size: 12px;
+        margin-right: 0.5rem;
+    }
+
+        .cta {
+        font-size: 12px;
+            padding: 0.5rem 0.8rem;
+    }
+
+    .currency_buttons {
+    padding-left: 5%;
+    padding-right: 5%;
+}
+
+#about-us {
+
+    flex-direction: column;
+}
+
+.about-img {
+    width: 100%;
+}
+
+.about-img img {
+   
+    height: 300px;
+}
+
+.about-notes {
+margin-top: 1rem;
+    width: 100%;
+}
+
+.about-notes p {
+font-size: 14px;
+}
+
+.services {
+  flex-direction: column;
+}
+
+.service-card {
+padding: 0.5rem 1.5rem;
+    width: 100%;
+    margin-bottom: 0.5rem;
+ 
+}
+
+.service-card img {
+   
+    padding: 0.5rem;
+    width: 50px;
+    height: 45px;
+  
+}
+.service-card p {
+  font-size: 14px;
+  
+}
+
+.about-cta-btn {
+        width: 40%;
+        font-size: 14px;
+        text-align: center;
+    }
+
+        .btn-agent {
+          width: 20%;
+        padding: 0.2rem 0.5rem;
+      
+    }
+
+        .agent-notes {
+        padding: 0.3rem 0.5rem;
+    }
+
+        .agent-notes h2 {
+        font-size: 18px;
+    }
+
+    #mortgage {
+  flex-direction: column;
+}
+
+.m-text {
+    width: 100%;
+}
+.m-text p {
+    font-size: 14px;
+}
+
+.m-image {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.m-image img {
+    height: 350px;
+   
+}
+
+.m-text a {
+    font-size: 14px;
+   
+}
+
+
+
+   .footer-grp-right .footer-grp {
+    width: 50%;
+  }
+
+.footer-grp h3 {
+   font-size: 12px;
+}
+.footer-grp p {
+   font-size: 10px;
+}
+
+.footer-nav-links, .footer-nav-links a {
+      font-size: 10px;
+}
+
+.footer-icon {
+  
+    margin-right: 0.3rem;
+}
+
+   .footer-logo {
+    height: 40px;
+    width: 40px;
+  }
+
+  .footer-details div {
+
+    justify-content: start;
+    
+}
+  .footer-details div span {
+
+  margin-right: 1rem;
+    
+}
+
+.copyright {
+   font-size: 12px;
+}
+
+.nav-arrow h5 {
+   font-size: 10px;
+}
+.nav-arrow svg {
+  height: 0.8rem;
+}
 }
 
 @media screen and (max-width: 360px) {
+  .nav-links .nav-item {
+    display:none
+
+}
+
+#hero {
+  flex-direction: column-reverse;
+   
+}
+
+.d-hero-image {
+    width: 100%;
+}
+
+.d-hero-text {
+    width: 100%;
+}
+
+    .currency_buttons {
+        padding-left: 0;
+        padding-right: 0;
+       
+    }
+
+    .p-currency-grp button {
+    font-size: 12px;
+    padding: 0.3rem 0.6rem;
+}
+
+.properties-grid {
+flex-direction: column;
+}
+
+.property-card {
+        width: 100%;
+      
+    }
 }

@@ -65,6 +65,24 @@
 @media screen and (max-width: 768px) {
 }
 @media screen and (max-width: 640px) {
+
+    .navigation {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  .logo {
+    height: 60px;
+    width: 60px;
+}
+  .nav-item {
+    margin-right: 1rem;
+    font-size: 14px;
+}
+
+.cta {
+      font-size: 14px;
+}
 }
 
 @media screen and (max-width: 576px) {
