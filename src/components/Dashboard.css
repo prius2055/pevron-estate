@@ -808,10 +808,14 @@ margin-top: 5rem;
 
 @media screen and (max-width: 576px) {
     .success_container {
-  
-  
-    padding: 2rem 1rem;
-   
+    padding: 2rem 1rem;  
+}
+
+.spinner_container {
+
+  left: 5%;
+  width: 90%;
+
 }
 
 }
